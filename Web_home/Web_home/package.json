@@ -1,0 +1,9 @@
+{
+  "name": "web_home",
+  "version": "0.0.0",
+  "description": "Web_home",
+  "main": "server.js",
+  "author": {
+    "name": ""
+  }
+}
