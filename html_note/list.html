@@ -5,6 +5,9 @@
     <meta charset="utf-8" />
     <title></title>
     <style>
+        #element_rank{
+            font-size: 12pt;
+        }
         pre{
             font-family: sans-serif
         }
@@ -12,35 +15,44 @@
             font-size: 20px;
             font-weight: bold;
         }
+        
+        .bor{
+            width: 500pt;
+            text-align: left;
+            margin-left: 0pt;
+        }
+        
     </style>
 </head>
 <body>
     <h1>要素階層</h1>
-    <div><pre>
+    <div id="element_rank"><pre>
 html{
-    head{
-        title{}
-        style{}
-        script{}
-        meta{}
-    }
-    body{
-        script{}
-        form{
-            input{}
-            body{}
+        head{
+                title{}
+                style{}
+                script{}
+                meta{}
         }
-        div{body}
-        img{}
-        p{}
-        b{}
-        br{}
-        font{}
-    }
+        body{
+                script{}
+                form{
+                        input{}
+                        body{}
+                }
+                div{body}
+                img{}
+                p{}
+                b{}
+                br{}
+                font{}
+        }
+}
     </pre></div>
     
     <h1>基本的な要素例</h1>
     <div style="position: relative; left:20pt;">
+        <hr class="bor" />
         <ul>
             <li><span class="tl">ドキュメント</span>
                 <ul>
@@ -51,6 +63,9 @@ html{
                     <li>meta</li>
                 </ul>
             </li>
+        </ul>
+        <hr class="bor"/>
+        <ul>
             <li><span class="tl">セクション</span>
                 <ul>
                     <li>body</li>
@@ -61,6 +76,9 @@ html{
                     <li>adress</li>
                 </ul>
             </li>
+        </ul>
+        <hr class="bor"/>
+        <p><ul>
             <li><span class="tl">コンテンツのグループ化</span>
                 <ul>
                     <li><a href="https://nabla27.github.io/html_note/element-p.html">p</a></li>
@@ -75,6 +93,9 @@ html{
                     <li><a href="https://nabla27.github.io/html_note/element-div.html">div</a></li>
                 </ul>
             </li>
+        </ul>
+        <hr class="bor"/>
+        <ul>
             <li><span class="tl">テキストの定義</span>
                 <ul>
                     <li><a href="https://nabla27.github.io/html_note/element-a.html">a</a></li>
@@ -91,6 +112,9 @@ html{
                     <li>del</li>
                 </ul>
             </li>
+        </ul>
+        <hr class="bor"/>
+        <ul>
             <li><span class="tl">埋め込みコンテンツ</span>
             <ul>
                 <li>img</li>
@@ -100,6 +124,9 @@ html{
                 <li>audio</li>
             </ul>
             </li>
+        </ul>
+        <hr class="bor"/>
+        <ul>
             <li><span class="tl">テーブル</span>
                 <ul>
                     <li>table</li>
@@ -114,6 +141,9 @@ html{
                     <li>tfoot</li>
                 </ul>
             </li>
+        </ul>
+        <hr class="bor"/>
+        <ul>
             <li><span class="tl">フォーム</span>
                 <ul>
                     <li>form</li>
@@ -126,6 +156,7 @@ html{
                 </ul>
             </li>
         </ul>
+        <hr class="bor" />
         
        
    </div>
