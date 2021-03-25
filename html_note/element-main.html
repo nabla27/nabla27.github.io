@@ -1,0 +1,92 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+        .code {
+            margin: 1em 0; /* ブロック前後の余白 */
+            padding: 1em; /* ブロック内の余白 */
+            border-radius: 5px; /* 角丸 */
+            background: #25292f; /* 背景色 */
+            color: #fff; /* 文字色 */
+            white-space: pre-wrap; /* はみ出たときに折り返す */
+            width: 400pt;
+        }
+
+        .table1_d1 {
+            width: 100pt;
+        }
+
+        .table1_d2 {
+            width: 315pt;
+        }
+
+        .code_name {
+            color: fuchsia;
+        }
+
+        .disp {
+            border: solid;
+            width: 415pt;
+        }
+    </style>
+</head>
+<body>
+    <h1>main要素</h1>
+    <table class="table1" border="1">
+        <tr>
+            <td class="table1_d1">説明</td>
+            <td class="table1_d2">文書内の主要なコンテンツを表す。一つの文書内で複数のmain要素は使えない。</td>
+        </tr>
+        <tr>
+            <td>使用できる属性</td>
+            <td>グローバル属性</td>
+        </tr>
+    </table>
+    <br />
+    <!--コード例------------------------------------------------------------------------------------------->
+    <h3>コード例</h3>
+    <span class="code_name">・記事セクションを主要な記事として表す</span>
+    <pre class="code"><code>&lt;header>
+    &lt;h1>Twitterとは&lt;/h1>
+    &lt;p>ソーシャルネット・ワーキング・サービス(SNS)の一つ。&lt;/p>
+&lt;/header>
+&lt;main>
+    &lt;article>
+         &lt;h1>「ツイート」機能&lt;/h1>
+         &lt;p>半角280文字以内のテキストや画像、動画、URLを投稿できる。&lt;/p>
+    &lt;/article>
+    &lt;article>
+         &lt;h1>「リツイート」機能&lt;/h1>
+         &lt;p>
+            他のユーザーの投稿を再投稿できる機能。&lt;br />
+            リツイートしたユーザーの独自のコメントを入れてリツイート可能である。
+         &lt;/p>
+    &lt;/article>
+&lt;/main></code></pre>
+
+    <div class="disp">
+        <header>
+            <h1>Twitterとは</h1>
+            <p>ソーシャルネット・ワーキング・サービス(SNS)の一つ。</p>
+        </header>
+        <main>
+            <article>
+                <h1>「ツイート」機能</h1>
+                <p>半角280文字以内のテキストや画像、動画、URLを投稿できる。</p>
+            </article>
+            <article>
+                <h1>「リツイート」機能</h1>
+                <p>
+                    他のユーザーの投稿を再投稿できる機能。<br />
+                    リツイートしたユーザーの独自のコメントを入れてリツイート可能である。
+                </p>
+            </article>
+        </main>
+    </div>
+    <br /><br />
+
+</body>
+</html>
