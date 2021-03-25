@@ -27,6 +27,13 @@
         .table1_d2 {
             width: 315pt;
         }
+        .code_name{
+            color: fuchsia;
+        }
+        .disp{
+            border: solid;
+            width: 415pt;
+        }
     </style>
 </head>
 <body>
@@ -67,22 +74,24 @@
         </tr>
     </table>
     <br />
-    <h4>コード例</h4>
-    <pre class="code"><code>#順不同リストの作成
-&lt;ul>
+    <!--コード例------------------------------------------------------------------------------------------------>
+    <h3>コード例</h3>
+    <span class="code_name">・順序なしリストの作成</span>
+    <pre class="code"><code>&lt;ul>
     &lt;li>リスト1&lt;>
     &lt;li>リスト2&lt;>
     &lt;li>リスト3&lt;>
 &lt;ul></code></pre>
-    #開始<br />
-    <ul>
-        <li>リスト1</li>
-        <li>リスト2</li>
-        <li>リスト3</li>
-    </ul>
-    #終了
-    <pre class="code"><code>#リストの入れ子(順不同)
-&lt;ul>
+    <div class="disp">
+        <ul>
+            <li>リスト1</li>
+            <li>リスト2</li>
+            <li>リスト3</li>
+        </ul>
+    </div>
+    <br /><br />
+    <span class="code_name">・リストの入れ子(順不同)</span>
+    <pre class="code"><code>&lt;ul>
     &lt;li>買い物リスト
         &lt;ul>
             &lt;li>牛乳&lt;/li>
@@ -98,37 +107,111 @@
         &lt;/ul>
     &lt;/li>
 &lt;/ul></code></pre>
-    #開始
-    <ul>
-        <li>買い物リスト
-            <ul>
-                <li>牛乳</li>
-                <li>牛肉</li>
-                <li>卵</li>
-            </ul>
-        </li>
-        <li>買い物リスト
-            <ul>
-                <li>掃除</li>
-                <li>買い物</li>
-                <li>犬の散歩</li>
-            </ul>
-        </li>
-    </ul>
-    #終了
-    <pre class="code"><code>#序列リストの作成
-&lt;ol>
+    <div class="disp">
+        <ul>
+            <li>買い物リスト
+                <ul>
+                    <li>牛乳</li>
+                    <li>牛肉</li>
+                    <li>卵</li>
+                </ul>
+            </li>
+            <li>買い物リスト
+                <ul>
+                    <li>掃除</li>
+                    <li>買い物</li>
+                    <li>犬の散歩</li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    <br /><br />
+    <span class="code_name">・序列リストの作成</span>
+    <pre class="code"><code>&lt;ol>
     &lt;li>鬼滅の刃&lt;/li>
     &lt;li>進撃の巨人&lt;/li>
     &lt;li>呪術廻戦&lt;/li>
 &lt;/ol></code></pre>
-    #開始
-    <ol>
-        <li>鬼滅の刃</li>
-        <li>進撃の巨人</li>
-        <li>呪術廻戦</li>
-    </ol>
-    #終了
+    <div class="disp">
+        <ol>
+            <li>鬼滅の刃</li>
+            <li>進撃の巨人</li>
+            <li>呪術廻戦</li>
+        </ol>
+    </div>
+    <br /><br />
+    <span class="code_name">・olのreversed属性。順序を逆にする。</span>
+    <pre class="code"><code>&lt;ol reversed>
+    &lt;li>鬼滅の刃&lt;/li>
+    &lt;li>進撃の巨人&lt;/li>
+    &lt;li>呪術廻戦&lt;/li>
+&lt;/ol></code></pre>
+    <div class="disp">
+        <ol reversed>
+            <li>鬼滅の刃</li>
+            <li>進撃の巨人</li>
+            <li>呪術廻戦</li>
+        </ol>
+    </div>
+    <br /><br />
+    <span class="code_name">・olのstart属性。任意の番号から開始する。</span>
+    <pre class="code"><code>&lt;ol start="3">
+    &lt;li>鬼滅の刃&lt;/li>
+    &lt;li>進撃の巨人&lt;/li>
+    &lt;li>呪術廻戦&lt;/li>
+&lt;/ol></code></pre>
+    <div class="disp">
+        <ol start="3">
+            <li>鬼滅の刃</li>
+            <li>進撃の巨人</li>
+            <li>呪術廻戦</li>
+        </ol>
+    </div>
+    <br /><br />
+    <span class="code_name">・olのtype属性。リスト番号の種類を指定可能。</span>
+    <pre class="code"><code>&lt;ol type="a">
+    &lt;li>鬼滅の刃&lt;/li>
+    &lt;li>進撃の巨人&lt;/li>
+    &lt;li>呪術廻戦&lt;/li>
+&lt;/ol>
+&lt;ol type="A">
+    &lt;li>鬼滅の刃&lt;/li>
+    &lt;li>進撃の巨人&lt;/li>
+    &lt;li>呪術廻戦&lt;/li>
+&lt;/ol>
+&lt;ol type="i">
+    &lt;li>鬼滅の刃&lt;/li>
+    &lt;li>進撃の巨人&lt;/li>
+    &lt;li>呪術廻戦&lt;/li>
+&lt;/ol>
+&lt;ol type="i">
+    &lt;li>鬼滅の刃&lt;/li>
+    &lt;li>進撃の巨人&lt;/li>
+    &lt;li>呪術廻戦&lt;/li>
+&lt;/ol></code></pre>
+    <div class="disp">
+        <ol type="a">
+            <li>鬼滅の刃</li>
+            <li>進撃の巨人</li>
+            <li>呪術廻戦</li>
+        </ol>
+        <ol type="A">
+            <li>鬼滅の刃</li>
+            <li>進撃の巨人</li>
+            <li>呪術廻戦</li>
+        </ol>
+        <ol type="i">
+            <li>鬼滅の刃</li>
+            <li>進撃の巨人</li>
+            <li>呪術廻戦</li>
+        </ol>
+        <ol type="I">
+            <li>鬼滅の刃</li>
+            <li>進撃の巨人</li>
+            <li>呪術廻戦</li>
+        </ol>
+    </div>
+    <br /><br />
 
 
 </body>
