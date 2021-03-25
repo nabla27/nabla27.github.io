@@ -4,8 +4,132 @@
 <head>
     <meta charset="utf-8" />
     <title></title>
+    <style>
+        .code {
+            margin: 1em 0; /* ブロック前後の余白 */
+            padding: 1em; /* ブロック内の余白 */
+            border-radius: 5px; /* 角丸 */
+            background: #25292f; /* 背景色 */
+            color: #fff; /* 文字色 */
+            white-space: pre-wrap; /* はみ出たときに折り返す */
+            width: 400pt;
+        }
+
+        .table1 {
+            table-layout: fixed;
+            border-collapse: collapse;
+        }
+
+        .table1_d1 {
+            width: 100pt;
+        }
+
+        .table1_d2 {
+            width: 315pt;
+        }
+    </style>
 </head>
 <body>
     <h1>ul/ol/li要素</h1>
+    <table class="table1" border="1">
+        <caption>ul</caption>
+        <tr>
+            <td class="table1_d1">説明</td>
+            <td class="table1_d2">順不同のリストを生成。ul要素の直下にはul要素を置けないが、li要素の子要素として入れ子にすることは可能。</td>
+        </tr>
+        <tr>
+            <td>使用できる属性</td>
+            <td>グローバル属性</td>
+        </tr>
+    </table>
+    <br />
+    <table class="table1" border="1">
+        <caption>ol</caption>
+        <tr>
+            <td class="table1_d1">説明</td>
+            <td class="table1_d2">序列リストを生成。ol要素の直下にはol要素を置けないが、li要素の子要素として入れ子にすることは可能。</td>
+        </tr>
+        <tr>
+            <td>使用できる属性</td>
+            <td>グローバル属性, reversed, start, type</td>
+        </tr>
+    </table>
+    <br />
+    <table class="table1" border="1">
+        <caption>li</caption>
+        <tr>
+            <td class="table1_d1">説明</td>
+            <td class="table1_d2">ul要素やol要素の子要素として、文章をリスト化する。</td>
+        </tr>
+        <tr>
+            <td>使用できる属性</td>
+            <td>グローバル属性, value</td>
+        </tr>
+    </table>
+    <br />
+    <h4>コード例</h4>
+    <pre class="code"><code>#順不同リストの作成
+&lt;ul>
+    &lt;li>リスト1&lt;>
+    &lt;li>リスト2&lt;>
+    &lt;li>リスト3&lt;>
+&lt;ul></code></pre>
+    #開始<br />
+    <ul>
+        <li>リスト1</li>
+        <li>リスト2</li>
+        <li>リスト3</li>
+    </ul>
+    #終了
+    <pre class="code"><code>#リストの入れ子(順不同)
+&lt;ul>
+    &lt;li>買い物リスト
+        &lt;ul>
+            &lt;li>牛乳&lt;/li>
+            &lt;li>牛肉&lt;/li>
+            &lt;li>卵&lt;/li>
+        &lt;/ul>
+    &lt;/li>
+    &lt;li>やることリスト
+        &lt;ul>
+            &lt;li>掃除&lt;/li>
+            &lt;li>買い物&lt;/li>
+            &lt;li>犬の散歩&lt;/li>
+        &lt;/ul>
+    &lt;/li>
+&lt;/ul></code></pre>
+    #開始
+    <ul>
+        <li>買い物リスト
+            <ul>
+                <li>牛乳</li>
+                <li>牛肉</li>
+                <li>卵</li>
+            </ul>
+        </li>
+        <li>買い物リスト
+            <ul>
+                <li>掃除</li>
+                <li>買い物</li>
+                <li>犬の散歩</li>
+            </ul>
+        </li>
+    </ul>
+    #終了
+    <pre class="code"><code>#序列リストの作成
+&lt;ol>
+    &lt;li>鬼滅の刃&lt;/li>
+    &lt;li>進撃の巨人&lt;/li>
+    &lt;li>呪術廻戦&lt;/li>
+&lt;/ol></code></pre>
+    #開始
+    <ol>
+        <li>鬼滅の刃</li>
+        <li>進撃の巨人</li>
+        <li>呪術廻戦</li>
+    </ol>
+    #終了
+
+
 </body>
 </html>
