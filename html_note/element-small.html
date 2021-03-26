@@ -1,0 +1,83 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+        .code {
+            margin: 1em 0; /* ブロック前後の余白 */
+            padding: 1em; /* ブロック内の余白 */
+            border-radius: 5px; /* 角丸 */
+            background: #25292f; /* 背景色 */
+            color: #fff; /* 文字色 */
+            white-space: pre-wrap; /* はみ出たときに折り返す */
+            width: 400pt;
+        }
+
+        .code2 {
+            margin: 1em 0; /* ブロック前後の余白 */
+            padding: 1em; /* ブロック内の余白 */
+            border-radius: 5px; /* 角丸 */
+            background: #25292f; /* 背景色 */
+            color: #fff; /* 文字色 */
+            white-space: pre-wrap; /* はみ出たときに折り返す */
+            width: 484pt;
+        }
+
+        .table1_d1 {
+            width: 100pt;
+        }
+
+        .table1_d2 {
+            width: 315pt;
+        }
+
+        .code_name {
+            color: fuchsia;
+        }
+
+        .disp {
+            border: solid;
+            width: 415pt;
+        }
+
+        .disp2 {
+            border: solid;
+            width: 500pt;
+        }
+
+        #test {
+            color: aqua;
+        }
+    </style>
+</head>
+<body>
+    <h1>small要素</h1>
+    <table class="table1" border="1">
+        <tr>
+            <td class="table1_d1">説明</td>
+            <td class="table1_d2">細目や注釈のテキストを表す。</td>
+        </tr>
+        <tr>
+            <td>使用できる属性</td>
+            <td>グローバル属性</td>
+        </tr>
+    </table>
+    <br />
+    <!--コード例------------------------------------------------------------------------------>
+    <span class="code_name">・注釈のテキスト</span>
+    <pre class="code2"><code>&lt;p>
+    samll要素は細目や注釈のテキストを表すのに用います。&lt;br />
+    &lt;small>※強調や重要であるとマークアップされたものを弱めるものではありません。&lt;/small>
+&lt;/p></code></pre>
+
+    <div class="disp2">
+        <p>
+            small要素は細目や注釈のテキストを表すのに用います。<br />
+            <small>※強調や重要であるとマークアップされたものを弱めるものではありません。</small>
+        </p>
+    </div>
+    <br /><br />
+</body>
+</html>
