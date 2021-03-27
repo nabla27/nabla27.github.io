@@ -1,0 +1,99 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+        .text {
+            font-size: 10pt;
+            /*vertical-align: middle;*/
+        }
+        #text1 {
+            line-height: 10pt;
+            border: solid;
+            width: 800pt;
+            height: 500pt;
+            background-color: paleturquoise;
+        }
+        .help{
+            height:14pt;
+            position:absolute;
+            right: 0pt;
+        }
+        
+    </style>
+    <script language="JavaScript">
+        var max = 8;
+        var mode = new Array(max);
+        for (var i = 1; i <= max; i++) {
+            mode[i] = "ja";
+        }
+        var eng = new Array(max);
+        var ja = new Array(max);
+        var word = new Array(max);
+        //---------------------------------------------------------------------------------------------------------------------
+        eng[1] = " The purpose of this study is to examine the impact of restructuring on company administrations.";
+        ja[1] = " この研究の目的は、リストラが会社運営に及ぼす影響を検討することである。";
+        eng[2] = " This paper is intended as an investigation of the water pollution in the Meguro River.";
+        ja[2] = " この論文のねらいは、目黒川の水質汚染の調査研究にある。";
+        eng[3] = " This paper discusses the issues related to the financial reforms proposed by the goverment."
+        ja[3] = " この論文は、政府が提唱した金融改革に関する問題について議論するものである。"
+        eng[4] = " In this article, I would like to explore a little further the ideal school admissions prosess, including the issues of equity and transparency."
+        ja[4] = " この論文では、理想的な入学のプロセスについて、公正さと透明さの課題を含めてさらに探求したい。"
+        eng[5] = " We are here concerned with the key aspects of the economic reforms currently needed."
+        ja[5] = " ここでは、現在必要とされている経済改革の鍵よなる側面に関心がある。"
+        eng[6] = " This is a comprative study of the Japanese and European educational systems."
+        ja[6] = " これは、日本とヨーロッパの教育制度に関する比較研究である。"
+        eng[7] = " The first chapter describes the major international contributions which his foundation made."
+        ja[7] = " 第一章では彼の財団が行った主な国際的貢献を記す。"
+        eng[8] = " The second chapter presents the unique biological characteristics of the substance."
+        ja[8] = " 第二章ではその物質特有の生物学上の特徴を提示する。"
+        //---------------------------------------------------------------------------------------------------------------------
+        var sup = max;
+        function setup(){
+            for (var j = 1; j <= sup; j++) {
+                if (mode[j] == "ja") {
+                    reverse(j);
+                    mode[j] = "eng";
+                }
+            }
+        }
+    </script>
+    <script>
+        function reverse(num) {
+            var elem = document.getElementById(num);
+            if (mode[num] == "ja") {
+                elem.innerHTML = eng[num]
+                mode[num] = "eng"
+            }
+            else if(mode[num] == "eng"){
+                elem.innerHTML = ja[num];
+                mode[num] = "ja"
+            }
+        }
+        function Help(num) {
+            alert(word[num]);
+        }
+    </script>
+</head>
+<body>
+    <!--
+    <b id="1" onclick = "reverse('1')">こんにちは</b><br />
+    <b id="2" onclick = "reverse('2')">こんにちは</b><br />
+    -->
+    <input id="setup" type="button" value="start" onclick="setup()" /><br />
+
+    <div style="position:absolute; left:50pt; top:100pt;" id="text1">
+        <input class="bt" type="radio" onclick="reverse(1)"><b class="text" id="1"></b><input class="help" type="button" value="help" onclick="Help(1)" /><br />
+        <input class="bt" type="radio" onclick="reverse(2)"><b class="text" id="2"></b><input class="help" type="button" value="help" onclick="Help(2)" /><br />
+        <input class="bt" type="radio" onclick="reverse(3)"><b class="text" id="3"></b><input class="help" type="button" value="help" onclick="Help(3)" /><br />
+        <input class="bt" type="radio" onclick="reverse(4)"><b class="text" id="4"></b><input class="help" type="button" value="help" onclick="Help(4)" /><br />
+        <input class="bt" type="radio" onclick="reverse(5)"><b class="text" id="5"></b><input class="help" type="button" value="help" onclick="Help(5)" /><br />
+        <input class="bt" type="radio" onclick="reverse(6)"><b class="text" id="6"></b><input class="help" type="button" value="help" onclick="Help(6)" /><br />
+        <input class="bt" type="radio" onclick="reverse(7)"><b class="text" id="7"></b><input class="help" type="button" value="help" onclick="Help(7)" /><br />
+        <input class="bt" type="radio" onclick="reverse(8)"><b class="text" id="8"></b><input class="help" type="button" value="help" onclick="Help(8)" /><br />
+    </div>
+</body>
+
+</html>
