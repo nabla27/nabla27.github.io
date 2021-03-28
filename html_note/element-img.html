@@ -1,0 +1,84 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+        .code {
+            margin: 1em 0; /* ブロック前後の余白 */
+            padding: 1em; /* ブロック内の余白 */
+            border-radius: 5px; /* 角丸 */
+            background: #25292f; /* 背景色 */
+            color: #fff; /* 文字色 */
+            white-space: pre-wrap; /* はみ出たときに折り返す */
+            width: 400pt;
+        }
+
+        .code2 {
+            margin: 1em 0; /* ブロック前後の余白 */
+            padding: 1em; /* ブロック内の余白 */
+            border-radius: 5px; /* 角丸 */
+            background: #25292f; /* 背景色 */
+            color: #fff; /* 文字色 */
+            white-space: pre-wrap; /* はみ出たときに折り返す */
+            width: 484pt;
+        }
+
+        .table1_d1 {
+            width: 100pt;
+        }
+
+        .table1_d2 {
+            width: 315pt;
+        }
+
+        .code_name {
+            color: fuchsia;
+        }
+
+        .disp {
+            border: solid;
+            width: 415pt;
+        }
+
+        .disp2 {
+            border: solid;
+            width: 500pt;
+        }
+
+        #test {
+            color: aqua;
+        }
+    </style>
+</head>
+<body>
+    <h1>img要素</h1>
+    <table class="table1" border="1">
+        <tr>
+            <td class="table1_d1">説明</td>
+            <td class="table1_d2">文書に画像を埋め込む。</td>
+        </tr>
+        <tr>
+            <td>使用できる属性</td>
+            <td>グローバル属性, alt, src, srcset, sizez, crossorigin, usemap, ismap, witdth, height, referrerpolicy, decording</td>
+        </tr>
+    </table>
+    <br />
+    <!--コード例------------------------------------------------------------------------------>
+    <span class="code_name">・画像の埋め込み。(src属性は必須で画像のurlを指定する。)<br />
+    埋め込めるファイルはPNG,GIF,JPEG,SVG,WebPなど。</span>
+    <pre class="code"><code>&lt;img src="file/IMG/free1.jpg"/>
+&lt;p>
+    富士山頂から昇る太陽です。
+&lt;/p></code></pre>
+
+    <div class="disp">
+        <img src="https://nabla27.github.io/file/IMG/free1.jpg" />
+        <p>
+            富士山頂から昇る太陽です。
+        </p>
+    </div>
+    <br /><br />
+</body>
+</html>
