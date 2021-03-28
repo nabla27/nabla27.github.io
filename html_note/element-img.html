@@ -66,9 +66,11 @@
     </table>
     <br />
     <!--コード例------------------------------------------------------------------------------>
-    <span class="code_name">・画像の埋め込み。(src属性は必須で画像のurlを指定する。)<br />
-    埋め込めるファイルはPNG,GIF,JPEG,SVG,WebPなど。</span>
-    <pre class="code"><code>&lt;img src="file/IMG/free1.jpg"/>
+    <span class="code_name">
+        ・画像の埋め込み。(src属性は必須で画像のurlを指定する。)<br />
+        ・埋め込めるファイルはPNG,GIF,JPEG,SVG,WebPなど。
+    </span>
+    <pre class="code"><code>&lt;img src="file/IMG/free1.jpg" width="415" />
 &lt;p>
     富士山頂から昇る太陽です。
 &lt;/p></code></pre>
@@ -78,6 +80,13 @@
         <p>
             富士山頂から昇る太陽です。
         </p>
+    </div>
+    <br /><br />
+    <span class="code_name">・alt属性(画像が表示出来なかった場合の代替テキストを指定)</span>
+    <pre class="code"><code>&lt;img src="file/IMG/missing.jpg" width="415" alt="富士山頂から昇る太陽です。"/></code></pre>
+
+    <div class="disp">
+        <img src="https://nabla27.github.io/file/IMG/missing.jpg" width="415" alt="富士山頂から昇る太陽です。"/>
     </div>
     <br /><br />
 </body>
