@@ -1,0 +1,144 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+        .code {
+            margin: 1em 0; /* ブロック前後の余白 */
+            padding: 1em; /* ブロック内の余白 */
+            border-radius: 5px; /* 角丸 */
+            background: #25292f; /* 背景色 */
+            color: #fff; /* 文字色 */
+            white-space: pre-wrap; /* はみ出たときに折り返す */
+            width: 400pt;
+        }
+
+        .code2 {
+            margin: 1em 0; /* ブロック前後の余白 */
+            padding: 1em; /* ブロック内の余白 */
+            border-radius: 5px; /* 角丸 */
+            background: #25292f; /* 背景色 */
+            color: #fff; /* 文字色 */
+            white-space: pre-wrap; /* はみ出たときに折り返す */
+            width: 484pt;
+        }
+
+        .table1_d1 {
+            width: 100pt;
+        }
+
+        .table1_d2 {
+            width: 315pt;
+        }
+
+        .code_name {
+            color: fuchsia;
+        }
+
+        .disp {
+            border: solid;
+            width: 415pt;
+        }
+
+        .disp2 {
+            border: solid;
+            width: 500pt;
+        }
+
+        #test {
+            color: aqua;
+        }
+    </style>
+</head>
+<body>
+    <h1>ins/del要素</h1>
+    <table class="table1" border="1">
+        <caption>ins</caption>
+        <tr>
+            <td class="table1_d1">説明</td>
+            <td class="table1_d2">文章に後から追記、挿入されたテキストを表す。</td>
+        </tr>
+        <tr>
+            <td>使用できる属性</td>
+            <td>グローバル属性, cite, datetime</td>
+        </tr>
+    </table>
+    <br />
+    <table class="table1" border="1">
+        <caption>del</caption>
+        <tr>
+            <td class="table1_d1">説明</td>
+            <td class="table1_d2">文章から削除されたテキストを表す。</td>
+        </tr>
+        <tr>
+            <td>使用できる属性</td>
+            <td>グローバル属性, cite, datetime</td>
+        </tr>
+    </table>
+    <br />
+    <!--コード例------------------------------------------------------------------------------>
+    <span class="code_name">・文章の改行</span>
+    <pre class="code"><code>&lt;h2>ToDo リスト&lt;/h2>
+&lt;ul>
+    &lt;li>部屋の掃除&lt;/li>
+    &lt;li>&lt;del>牛乳を買う。&lt;/del>&lt;/li>
+    &lt;li>&lt;ins>課題の提出&lt;/ins>&lt;/li>
+    &lt;li>&lt;ins>ゼミの予習&lt;/ins>&lt;/li>
+&lt;/ul></code></pre>
+
+    <div class="disp">
+        <h2>ToDo リスト</h2>
+        <ul>
+            <li>部屋の掃除</li>
+            <li><del>牛乳を買う。</del></li>
+            <li><ins>課題の提出</ins></li>
+            <li><ins>ゼミの予習</ins></li>
+        </ul>
+    </div>
+    <br /><br />
+    <span class="code_name">・cite要素(URLでリソースを指定)</span>
+    <pre class="code"><code>
+    &lt;h2>ToDo リスト&lt;/h2>
+    &lt;ul>
+    &lt;li>部屋の掃除&lt;/li>
+    &lt;li>&lt;del cite="https://www.google.com/?hl=ja">牛乳を買う。&lt;/del>&lt;/li>
+    &lt;li>&lt;ins>課題の提出&lt;/ins>&lt;/li>
+    &lt;li>&lt;ins cite="https://www.google.com/?hl=ja">ゼミの予習&lt;/ins>&lt;/li>
+    &lt;/ul>
+</code></pre>
+
+    <div class="disp">
+        <h2>ToDo リスト</h2>
+        <ul>
+            <li>部屋の掃除</li>
+            <li><del cite="https://www.google.com/?hl=ja">牛乳を買う。</del></li>
+            <li><ins>課題の提出</ins></li>
+            <li><ins cite="https://www.google.com/?hl=ja">ゼミの予習</ins></li>
+        </ul>
+    </div>
+    <br /><br />
+    <span class="code_name">・datetime要素(追加、削除された日時を表す)</span>
+    <pre class="code"><code>
+    &lt;h2>ToDo リスト&lt;/h2>
+    &lt;ul>
+    &lt;li>部屋の掃除&lt;/li>
+    &lt;li>&lt;del datetime="2020-01-23">牛乳を買う。&lt;/del>&lt;/li>
+    &lt;li>&lt;ins>課題の提出&lt;/ins>&lt;/li>
+    &lt;li>&lt;ins datetime="2020-01-24">ゼミの予習&lt;/ins>&lt;/li>
+    &lt;/ul>
+</code></pre>
+
+    <div class="disp">
+        <h2>ToDo リスト</h2>
+        <ul>
+            <li>部屋の掃除</li>
+            <li><del datetime="2020-01-23">牛乳を買う。</del></li>
+            <li><ins>課題の提出</ins></li>
+            <li><ins datetime="2020-01-24">ゼミの予習</ins></li>
+        </ul>
+    </div>
+    <br /><br />
+</body>
+</html>
