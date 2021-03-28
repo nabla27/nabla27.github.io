@@ -24,7 +24,7 @@
         
     </style>
     <script language="JavaScript">
-        var max = 8;
+        var max = 16; //------------------------------------------------->要素数
         var mode = new Array(max);
         for (var i = 1; i <= max; i++) {
             mode[i] = "ja";
@@ -49,6 +49,22 @@
         ja[7] = " 第一章では彼の財団が行った主な国際的貢献を記す。"
         eng[8] = " The second chapter presents the unique biological characteristics of the substance."
         ja[8] = " 第二章ではその物質特有の生物学上の特徴を提示する。"
+        eng[9] = " In this article, we are not cencerned with the effectiveness of the heliport paln itself."
+        ja[9] = " この論文では、ヘリポート建設計画そのものの効果については取り扱わない。"
+        eng[10] = " It is interesting to follow up this point further, but this is not our present concern."
+        ja[10] = " このポイントをさらに追及することは興味深いが、それは現在の私たちの関心ごとではない。"
+        eng[11] = " I limit the discussion to the effect of the plan on the Mayoral election."
+        ja[11] = " 議論をその計画が市長選挙に与える影響に限定する。"
+        eng[12] = " As space is limited, I will concentrate on the effect of sleep disturbance on memory."
+        ja[12] = " 紙面に限りがあるので、問題の焦点を睡眠妨害が記憶力に及ぼす影響に絞ることにする。"
+        eng[13] = " As the purpose of this paper is concerned, it is not necessary to discuss the secondary effect that has accompanied the primary one in detail."
+        ja[13] = " この論文の目的からして、一次的影響に付随して起きた二次的影響について詳しく議論することは必要ではない。"
+        eng[14] = " The combined effects of stressful exercise and sleep disturbance on human health are too complicated to be examined in detail here."
+        ja[14] = " ストレスのたまる運動と睡眠妨害の組み合わせが人間の健康に及ぼす影響はとても複雑なのでここで詳しく検証することはできない。"
+        eng[15] = " I will concentrate on the following issues: investment and finance."
+        ja[15] = " 次の事柄、すなわち投資と財政に的を絞る。"
+        eng[16] = " I will not take up this matter in detail."
+        ja[16] = " この問題を詳細には取り上げない。"
         //---------------------------------------------------------------------------------------------------------------------
         var sup = max;
         function setup(){
@@ -93,6 +109,15 @@
         <input class="bt" type="radio" onclick="reverse(6)"><b class="text" id="6"></b><input class="help" type="button" value="help" onclick="Help(6)" /><br />
         <input class="bt" type="radio" onclick="reverse(7)"><b class="text" id="7"></b><input class="help" type="button" value="help" onclick="Help(7)" /><br />
         <input class="bt" type="radio" onclick="reverse(8)"><b class="text" id="8"></b><input class="help" type="button" value="help" onclick="Help(8)" /><br />
+        <br />
+        <input class="bt" type="radio" onclick="reverse(9)"><b class="text" id="9"></b><input class="help" type="button" value="help" onclick="Help(9)" /><br />
+        <input class="bt" type="radio" onclick="reverse(10)"><b class="text" id="10"></b><input class="help" type="button" value="help" onclick="Help(10)" /><br />
+        <input class="bt" type="radio" onclick="reverse(11)"><b class="text" id="11"></b><input class="help" type="button" value="help" onclick="Help(11)" /><br />
+        <input class="bt" type="radio" onclick="reverse(12)"><b class="text" id="12"></b><input class="help" type="button" value="help" onclick="Help(12)" /><br />
+        <input class="bt" type="radio" onclick="reverse(13)"><b class="text" id="13"></b><input class="help" type="button" value="help" onclick="Help(13)" /><br />
+        <input class="bt" type="radio" onclick="reverse(14)"><b class="text" id="14"></b><input class="help" type="button" value="help" onclick="Help(14)" /><br />
+        <input class="bt" type="radio" onclick="reverse(15)"><b class="text" id="15"></b><input class="help" type="button" value="help" onclick="Help(15)" /><br />
+        <input class="bt" type="radio" onclick="reverse(16)"><b class="text" id="16"></b><input class="help" type="button" value="help" onclick="Help(16)" /><br />
     </div>
 </body>
 

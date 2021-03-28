@@ -1,0 +1,100 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+        .text {
+            font-size: 10pt;
+            /*vertical-align: middle;*/
+        }
+
+        #text1 {
+            line-height: 10pt;
+            border: solid;
+            width: 800pt;
+            height: 500pt;
+            background-color: paleturquoise;
+            overflow: scroll;
+        }
+
+        .help {
+            height: 14pt;
+            position: absolute;
+            right: 0pt;
+        }
+    </style>
+    <script language="JavaScript">
+        var max = 16; //------------------------------------------------->要素数
+        var mode = new Array(max);
+        for (var i = 1; i <= max; i++) {
+            mode[i] = "ja";
+        }
+        var eng = new Array(max);
+        var ja = new Array(max);
+        var word = new Array(max);
+        //---------------------------------------------------------------------------------------------------------------------
+        eng[1] = " This book is study of Bernhard Riemann's epoch-making 8-page paper and of the sub-sequent developments in the theory which this paper inaugurated."
+        
+        eng[2] = " This first chapter is an examination and devoted to some of the work which has been done since 1869 on the questions which Riemann left unanswered."
+
+        eng[3] = " This theorem goes beyond Euclid's ancient theorem that there are infinitely many primes and shows that the primes are rather dense in the set of all integers --denser than the squares, for example, in that the sum of the reciprocals of the square numbers converges."
+
+        eng[4] = " Around 1800 Legendre published in this 'Theorie des Nombres' an empirical formula for the number of primes less than a given value which amounted more or less to the same statement, namely, that the density of primes is 1/log(x)."
+
+        eng[5] = " The main part of this chapter is devoted to von Mangoldt's proof of the formula (6) for psi(x)."
+
+        eng[6] = " In Section 3.2 the formula is derived from the termwise evaluation of certain definite integrals, and in the following three sections the validity of these termwise evaluations is rigorously proved."
+
+        eng[7] = " Von Mangoldt's proof of Riemann's original formula (1) is outlined in the next two sections, and the last section deals with the numerical evaluation of the constant ζ'(0)/ζ(0)."
+
+        eng[8] = " It will be shown that both these differences approach zero as h→∞."
+
+        eng[9] = " Then, since the limmit (4) exists, it follows first that the 'diagonal' limit (5) exists and is equal to it and hence hence that the limit (6) exists and is equal to it as desired."
+
+        //---------------------------------------------------------------------------------------------------------------------
+        var sup = max;
+        function setup(){
+            for (var j = 1; j <= sup; j++) {
+                if (mode[j] == "ja") {
+                    reverse(j);
+                    mode[j] = "eng";
+                }
+            }
+        }
+    </script>
+    <script>
+        function reverse(num) {
+            var elem = document.getElementById(num);
+            if (mode[num] == "ja") {
+                elem.innerHTML = eng[num]
+                mode[num] = "eng"
+            }
+            else if(mode[num] == "eng"){
+                elem.innerHTML = ja[num];
+                mode[num] = "ja"
+            }
+        }
+        function Help(num) {
+            alert(word[num]);
+        }
+    </script>
+</head>
+<body>
+    <input id="setup" type="button" value="start" onclick="setup()" /><br />
+
+    <div style="position:absolute; left:50pt; top:100pt;" id="text1">
+        
+        <input class="bt" type="radio" onclick="reverse(1)"><b class="text" id="1" onclick="Help(1)"></b><br />
+        <input class="bt" type="radio" onclick="reverse(2)"><b class="text" id="2" onclick="Help(2)"></b><br />
+        <input class="bt" type="radio" onclick="reverse(3)"><b class="text" id="3" onclick="Help(3)"></b><br /> 
+        <input class="bt" type="radio" onclick="reverse(4)"><b class="text" id="4" onclick="Help(4)"></b><br />
+        <input class="bt" type="radio" onclick="reverse(5)"><b class="text" id="5" onclick="Help(5)"></b><br />
+        <input class="bt" type="radio" onclick="reverse(6)"><b class="text" id="6" onclick="Help(6)"></b><br />
+        <input class="bt" type="radio" onclick="reverse(7)"><b class="text" id="7" onclick="Help(7)"></b><br />
+        <input class="bt" type="radio" onclick="reverse(8)"><b class="text" id="8" onclick="Help(8)"></b><br />
+        <input class="bt" type="radio" onclick="reverse(9)"><b class="text" id="9" onclick="Help(9)"></b><br />
+    </div>
+</body>
+</html>
