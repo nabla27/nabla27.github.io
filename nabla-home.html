@@ -40,29 +40,30 @@
             position: relative;
             top: 200pt;
             */
-            text-align: center;
-            margin-left: auto;
-            margin-right: auto;
-            text-align: left;
-            width: 600pt;
-            height: 400pt;
-            top: 100pt;
-            border: solid;
-            position: relative;
-            overflow: scroll;
-            overflow: hidden;
+            text-align: center; /* 中央表示 */
+            margin-left: auto; /* 中央表示 */
+            margin-right: auto; /* 中央表示 */
+            text-align: left; /* 中央表示 */
+            width: 600pt; /* 幅 */
+            height: 400pt; /* 高さ */
+            top: 100pt; /* ページに対する位置 */
+            border: solid; /* 枠線の種類 */
+            position: relative; /* 子要素を相対的に設定するために */
+            overflow: scroll; /* スクロール機能を追加 */
+            overflow: hidden; /* スクロールバーの非表示 */
         }
         .menu {
-            position: absolute;
-            border: solid;
-            border-color: black;
-            color: white;
-            width: 150pt;
-            height: 200pt;
+            position: absolute; /* 親要素.menu_boxを基準に位置を決める */
+            border: solid; /* 枠線の種類 */
+            border-color: black; /* 枠線の色 */
+            color: white; /* 文字色 */
+            width: 150pt; /* 各メニューのボックス幅 */
+            height: 200pt; /* 各メニューのボックスの高さ */
         }
     </style>
 </head>
 <body>
+    <!--各メニュー------------------------------------------------------------------------------>
     <div class="menu_box">
         <div class="menu" id="menu1">
             <h5>プログラミング</h5>
