@@ -145,16 +145,16 @@
 
         .arrow::before,
         .arrow::after {
-            position: absolute;
-            top: 0;
-            bottom: 0;
-            left: 0;
-            margin: auto;
+            position: absolute; /*absolute*/
+            top: 40px; /*0 -> 40px*/
+            bottom: 0; /*0*/
+            left: 0; /*0*/
+            margin: auto; /*zuto*/
             content: "";
-            vertical-align: middle;
+            vertical-align: middle; /*middle*/
         }
         .next::before {
-            left: 0px; /*3px -> 0px*/
+            left: -110px; /*3px -> 0px -> -110px*/
             width: 30px; /*4px -> 30px*/
             height: 30px; /*4px -> 30px*/
             border-top: 2px solid white; /*2px solid #7a0*/
@@ -163,7 +163,7 @@
             transform: rotate(45deg);
         }
         .prev::before {
-            left: -15px; /*3px -> -15px*/
+            left: 100px; /*3px -> -15px -> 100px*/
             width: 30px; /*4px -> 30px*/
             height: 30px; /*4px -> 30px*/
             border-top: 2px solid white; /*2px solid #7a0 -> 2px solid white*/
