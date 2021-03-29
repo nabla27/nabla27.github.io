@@ -4,6 +4,7 @@
 <head>
     <meta charset="utf-8" />
     <title></title>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <style>
         .back {
             image-orientation: 180deg;
@@ -23,18 +24,22 @@
             background-attachment: fixed; /* 固定 */
             background-position: center center; /* 縦横中央 */
         }
+
         #menu1 {
-           left:23pt;
-           top:10pt;
+            left: 23pt;
+            top: 10pt;
         }
-        #menu2{
+
+        #menu2 {
             left: 223pt;
-            top:10pt;
+            top: 10pt;
         }
-        #menu3{
+
+        #menu3 {
             left: 423pt;
             top: 10pt;
         }
+
         .menu_box {
             /*
             position: relative;
@@ -52,6 +57,7 @@
             overflow: scroll; /* スクロール機能を追加 */
             overflow: hidden; /* スクロールバーの非表示 */
         }
+
         .menu {
             position: absolute; /* 親要素.menu_boxを基準に位置を決める */
             border: solid; /* 枠線の種類 */
@@ -60,10 +66,55 @@
             width: 150pt; /* 各メニューのボックス幅 */
             height: 200pt; /* 各メニューのボックスの高さ */
         }
+
+        #title {
+            border-bottom-style: solid;
+            text-align: center; /* 中央表示 */
+            margin-left: auto; /* 中央表示 */
+            margin-right: auto; /* 中央表示 */
+            text-align: left; /* 中央表示 */
+        }
+
+        .title {
+            font-size: 50pt;
+            text-align: center;
+            transition: all .6s ease-in-out;
+            /*font-family: Sectra;*/
+            text-transform: uppercase;
+            transition-delay: .4s;
+            border-bottom: solid;
+            position: relative;
+            top: 120pt;
+            font-family: 'Vollkorn', serif;
+        }
+
+        .serection_text {
+            text-align: center;
+            transition: all .6s ease-in-out;
+            font-family: Sectra;
+            text-transform: uppercase;
+            transition-delay: .4s;
+            border-bottom: solid;
+            border-color: coral;
+            position: relative;
+            margin: 10pt;
+            color: white;
+        }
+
+        .serection {
+            text-align: center;
+            transition: all .6s ease-in-out;
+            font-family: Sectra;
+            text-transform: uppercase;
+            transition-delay: .4s;
+            position: relative;
+            top: 130pt;
+        }
     </style>
 </head>
 <body>
     <!--各メニュー------------------------------------------------------------------------------>
+    <!---
     <div class="menu_box">
         <div class="menu" id="menu1">
             <h5>プログラミング</h5>
@@ -82,6 +133,17 @@
             ここに説明<br />
             テスト用のメッセージを表示しています。
         </div>
+    </div>
+    -->
+    <!--タイトル-->
+    <div class="title" style="color: white; opacity: 1;">Programming</div>
+    <!--一覧-->
+    <div class="serection">
+        <span class="serection_text">Python</span>
+        <span class="serection_text">JavaScript</span>
+        <span class="serection_text">C++</span>
+        <span class="serection_text">html</span>
+        <span class="serection_text">CSS</span>
     </div>
 </body>
 </html>
