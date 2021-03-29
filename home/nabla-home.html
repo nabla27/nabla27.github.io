@@ -110,34 +110,45 @@
             position: relative;
             top: 130pt;
         }
+
+        .arrow::before,
+        .arrow::after {
+            position: absolute; /*absolute*/
+            margin: auto; /*auto*/
+            content: "";
+            text-align: center;
+        }
+
+        .next::before {
+            width: 30px; /*4px -> 30px*/
+            height: 30px; /*4px -> 30px*/
+            border-top: 7px solid white; /*2px solid #7a0*/
+            border-right: 6px solid white; /*2px solid #7a0*/
+            -webkit-transform: rotate(135deg);
+            transform: rotate(135deg);
+        }
     </style>
 </head>
 <body>
-    <!--各メニュー------------------------------------------------------------------------------>
-    <!---
-    <div class="menu_box">
-        <div class="menu" id="menu1">
-            <h5>プログラミング</h5>
-            <p>
-                ここに説明<br />
-                テスト用のメッセージを表示しています。
-            </p>
-        </div>
-        <div class="menu" id="menu2">
-            <h5>数学・物理</h5>
-            ここに説明<br />
-            テスト用のメッセージを表示しています。
-        </div>
-        <div class="menu" id="menu3">
-            <h5>英語ノート</h5>
-            ここに説明<br />
-            テスト用のメッセージを表示しています。
-        </div>
-    </div>
-    -->
+    
+    <!--Programming--------------------------------------------------------------------------------------------->
     <!--タイトル-->
     <div class="title" style="color: white; opacity: 1;">Programming</div>
-    <!--一覧-->
+    <!--メニュー-->
+    <div class="serection">
+        <p style="margin: 5pt;"><span class="serection_text">Python</span></p><br />
+        <p style="margin: 5pt;"><span class="serection_text">JavaScript</span></p><br />
+        <p style="margin: 5pt;"><span class="serection_text">C++</span></p><br />
+        <p style="margin: 5pt;"><span class="serection_text">html</span></p><br />
+        <p style="margin: 5pt;"><span class="serection_text">CSS</span></p><br />
+    <!--ボタン-->
+        <!--<p id="slider_next"><a href="#end" class="arrow next"></a></p>-->
+        <p style="maring: 5pt"><span class="serection_text"><img src=""</span></p>
+    </div>
+    <br /><br /><br /><br /><br />
+    <br /><br /><br /><br /><br />
+    <br /><br /><br /><br /><br />
+    <div class="title" style="color: white; opacity: 1;">Programming</div>
     <div class="serection">
         <span class="serection_text">Python</span>
         <span class="serection_text">JavaScript</span>
@@ -145,5 +156,23 @@
         <span class="serection_text">html</span>
         <span class="serection_text">CSS</span>
     </div>
+    <br /><br /><br /><br /><br />
+    <br /><br /><br /><br /><br />
+    <br /><br /><br /><br /><br />
+    <div class="title" style="color: white; opacity: 1;">Programming</div>
+    <div class="serection">
+        <span class="serection_text">Python</span>
+        <span class="serection_text">JavaScript</span>
+        <span class="serection_text">C++</span>
+        <span class="serection_text">html</span>
+        <span class="serection_text">CSS</span>
+    </div>
+    <br /><br /><br /><br /><br />
+    <br /><br /><br /><br /><br />
+    <br /><br /><br /><br /><br />
+    <a id="end" name="end">test</a>
+
+
+
 </body>
 </html>
