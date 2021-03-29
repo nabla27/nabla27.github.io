@@ -25,47 +25,7 @@
             background-position: center center; /* 縦横中央 */
         }
 
-        #menu1 {
-            left: 23pt;
-            top: 10pt;
-        }
-
-        #menu2 {
-            left: 223pt;
-            top: 10pt;
-        }
-
-        #menu3 {
-            left: 423pt;
-            top: 10pt;
-        }
-
-        .menu_box {
-            /*
-            position: relative;
-            top: 200pt;
-            */
-            text-align: center; /* 中央表示 */
-            margin-left: auto; /* 中央表示 */
-            margin-right: auto; /* 中央表示 */
-            text-align: left; /* 中央表示 */
-            width: 600pt; /* 幅 */
-            height: 400pt; /* 高さ */
-            top: 100pt; /* ページに対する位置 */
-            border: solid; /* 枠線の種類 */
-            position: relative; /* 子要素を相対的に設定するために */
-            overflow: scroll; /* スクロール機能を追加 */
-            overflow: hidden; /* スクロールバーの非表示 */
-        }
-
-        .menu {
-            position: absolute; /* 親要素.menu_boxを基準に位置を決める */
-            border: solid; /* 枠線の種類 */
-            border-color: black; /* 枠線の色 */
-            color: white; /* 文字色 */
-            width: 150pt; /* 各メニューのボックス幅 */
-            height: 200pt; /* 各メニューのボックスの高さ */
-        }
+        
 
         #title {
             border-bottom-style: solid;
@@ -79,12 +39,11 @@
             font-size: 50pt;
             text-align: center;
             transition: all .6s ease-in-out;
-            /*font-family: Sectra;*/
             text-transform: uppercase;
             transition-delay: .4s;
             border-bottom: solid;
             position: relative;
-            top: 120pt;
+            top: 40pt;
             font-family: 'Vollkorn', serif;
         }
 
@@ -108,69 +67,99 @@
             text-transform: uppercase;
             transition-delay: .4s;
             position: relative;
-            top: 130pt;
+            top: 60pt;
         }
 
-        .arrow::before,
-        .arrow::after {
-            position: absolute; /*absolute*/
-            margin: auto; /*auto*/
-            content: "";
+
+        .next_arrow {
             text-align: center;
+            transition: all .6s ease-in-out;
+            font-family: Sectra;
+            text-transform: uppercase;
+            transition-delay: .4s;
+            position: relative;
+            width: 4%;
+            height: 4%;
+            margin-top: 40pt;
+            margin-bottom: 400pt;
+            cursor: pointer;
         }
 
-        .next::before {
-            width: 30px; /*4px -> 30px*/
-            height: 30px; /*4px -> 30px*/
-            border-top: 7px solid white; /*2px solid #7a0*/
-            border-right: 6px solid white; /*2px solid #7a0*/
-            -webkit-transform: rotate(135deg);
-            transform: rotate(135deg);
+        
+
+        #header{
+            position:fixed;
+            top:0pt;
+            left:5pt;
+            border: solid;
+            width: 100%;
+            height: 40pt;
+            border-bottom: solid;
+            border-bottom-color: white;
+            z-index: 9999;
         }
+        #cite_name {
+            position: absolute;
+            left: 0pt;
+            top: 0pt;
+            font-family: 'Caveat', cursive;
+            font-size: 30pt;
+            color: white;
+        }
+        .menu_selection{
+            position: relative;
+            left: 600pt;
+            top:20pt;
+            text-decoration: none;
+            color: white;
+        }
+
     </style>
 </head>
 <body>
     
-    <!--Programming--------------------------------------------------------------------------------------------->
-    <!--タイトル-->
+    <div id="header">
+        <span id="cite_name">nabla's</span>
+        <span><a class="menu_selection" href="#">PROGRAMMING</a></span><span class="menu_selection"> |</span>
+        <span><a class="menu_selection" href="#">MATHEMATICS / PHYSICS</a></span><span class="menu_selection"> |</span>
+        <span><a class="menu_selection" href="#">ENGLISH NOTE</a></span><span class="menu_selection"> |</span>
+    </div>
+
+
+    <a id="Programming" name="Programming"></a>
     <div class="title" style="color: white; opacity: 1;">Programming</div>
-    <!--メニュー-->
     <div class="serection">
         <p style="margin: 5pt;"><span class="serection_text">Python</span></p><br />
         <p style="margin: 5pt;"><span class="serection_text">JavaScript</span></p><br />
         <p style="margin: 5pt;"><span class="serection_text">C++</span></p><br />
         <p style="margin: 5pt;"><span class="serection_text">html</span></p><br />
         <p style="margin: 5pt;"><span class="serection_text">CSS</span></p><br />
-    <!--ボタン-->
-        <!--<p id="slider_next"><a href="#end" class="arrow next"></a></p>-->
-        <p style="maring: 5pt"><span class="serection_text"><img src=""</span></p>
+        <p style="margin: 5pt;"><span class="serection_text">bash</span></p><br />
+        <p style="margin: 5pt"><span><a href="#mathematics_physics"><img class="next_arrow" src="https://nabla27.github.io/file/ICON/down_arrow.png" /></a></span></p>
     </div>
-    <br /><br /><br /><br /><br />
-    <br /><br /><br /><br /><br />
-    <br /><br /><br /><br /><br />
-    <div class="title" style="color: white; opacity: 1;">Programming</div>
+
+    <a id="mathematics_physics" name="mathematics_physics"></a>
+    <div class="title" style="color: white; opacity: 1;">Mathematics/Physics</div>
     <div class="serection">
-        <span class="serection_text">Python</span>
-        <span class="serection_text">JavaScript</span>
-        <span class="serection_text">C++</span>
-        <span class="serection_text">html</span>
-        <span class="serection_text">CSS</span>
+        <p style="margin: 5pt;"><span class="serection_text">pdf collection</span></p><br />
+        <p style="margin: 5pt;"><span class="serection_text">Article collection</span></p><br />
+        <p style="margin: 5pt;"><span class="serection_text">memorandum</span></p><br />
+
+        <p style="margin: 5pt"><span><a href="#English_note"><img class="next_arrow" src="https://nabla27.github.io/file/ICON/down_arrow.png" /></a></span></p>
     </div>
-    <br /><br /><br /><br /><br />
-    <br /><br /><br /><br /><br />
-    <br /><br /><br /><br /><br />
-    <div class="title" style="color: white; opacity: 1;">Programming</div>
+
+    <a id="English_note" name="English_note"></a>
+    <div class="title" style="color: white; opacity: 1;">English note</div>
     <div class="serection">
-        <span class="serection_text">Python</span>
-        <span class="serection_text">JavaScript</span>
-        <span class="serection_text">C++</span>
-        <span class="serection_text">html</span>
-        <span class="serection_text">CSS</span>
+        <p style="margin: 5pt;"><span class="serection_text">mathematics phrases</span></p><br />
+        <p style="margin: 5pt;"><span class="serection_text">Achademic treatise phrases</span></p><br />
+        <p style="margin: 5pt;"><span class="serection_text">daily life phrases</span></p><br />
+
+        <p style="margin: 5pt"><span><img class="next_arrow" src="https://nabla27.github.io/file/ICON/down_arrow.png" /></span></p>
     </div>
-    <br /><br /><br /><br /><br />
-    <br /><br /><br /><br /><br />
-    <br /><br /><br /><br /><br />
-    <a id="end" name="end">test</a>
+
+
+
 
 
 
