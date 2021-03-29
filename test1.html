@@ -1,0 +1,199 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+    <script>
+        jQuery(function($){
+          //表示領域の横幅（CSS の設定によってはパディングも含める必要がある）
+          var slider_width = $('#slider_wrap').width();
+          var slider_inner$ = $('#slider_inner');
+          //パネル全体を格納する div 要素の幅を設定
+          slider_inner$.css('width', slider_width * $('#slider_inner ul.panel').size() + 'px');
+          //最後のパネルを先頭位置に移動
+          $('#slider_inner ul.panel:last').prependTo('#slider_inner');
+          //移動した分だけ左方向へずらす（★）
+          slider_inner$.css('margin-left', '-' + slider_width + 'px');
+          //戻る」と「進む」ボタン
+          var prev_next$ = $('#slider_next, #slider_prev');
+
+          $('#slider_prev').click(function(){
+            prev_next$.hide();
+            slider_inner$.stop().animate({
+              marginLeft: parseInt(slider_inner$.css('margin-left'), 10) + slider_width + 'px'
+            }, 700,
+            function(){
+              slider_inner$.css('margin-left', '-' + slider_width + 'px');
+              $('#slider_inner ul.panel:last').prependTo('#slider_inner');
+              prev_next$.show();
+            });
+          });
+
+          $('#slider_next').click(function(){
+            prev_next$.hide();
+            slider_inner$.stop().animate({
+              //「戻る」では加算したが「進む」では減算
+              marginLeft: parseInt(slider_inner$.css('margin-left'), 10) - slider_width + 'px'
+            }, 700,
+            //「戻る」では「prependTo」だが「進む」では「appendTo」
+            function(){
+              slider_inner$.css('margin-left', '-' + slider_width + 'px');
+              $('#slider_inner ul.panel:first').appendTo('#slider_inner');
+              prev_next$.show();
+            });
+          });
+        });
+    </script>
+    <style>
+        * { /* 好ましくないが取りあえずマージンとパディングをリセット */
+            margin: 0;
+            padding: 0;
+        }
+
+        #slider_wrap {
+            margin: 20px auto;
+            width: 1350px; /* 全体の幅680 */
+            height: 650px; /* パネルの高さ + パディング125 */
+            padding: 20px; /*20*/
+            /*background: #EFEFEF;*/
+            position: relative; /* 基点とするため相対配置に */
+            border: 1px solid #CCC;
+        }
+        #back_img {
+            image-orientation: 180deg;
+            background-attachment: fixed;
+            height: 100vh;
+            width: auto;
+            background-size: auto 100%;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        #slider_prev {
+            position: absolute; /* 絶対配置 */
+            top: 325px; /*65*/
+            left: 10px; /*10*/
+            cursor: pointer;
+            color: white;
+        }
+
+        #slider_next {
+            position: absolute; /* 絶対配置 */
+            top: 325px; /*65*/
+            right: 10px; /*10*/
+            cursor: pointer;
+            color: white;
+        }
+
+        #slider {
+            width: 100%; /*100%*/
+            height: 100%; /*100%*/
+            overflow: hidden; /* はみ出た部分を非表示に */
+            /*background-color: grey;*/
+        }
+
+        #slider_inner ul.panel {
+            width: 1310px; /*640*/
+            height: 550px; /*85*/
+            padding: 15px; /* パネルの幅＋パディング = 680px */
+            list-style-type: none;
+            float: left;
+        }
+
+        #slider_inner ul.panel li {
+            float: left;
+            margin: 0 5px;
+            display: inline; /* li をフロートさせるとIE6 ではずれるのでこの指定で回避 */
+        }
+
+        #slider_inner ul.panel img {
+            border: none;
+        }
+
+        .title {
+            font-size: 50pt;
+            text-align: center;
+            transition: all .6s ease-in-out;
+            /*font-family: Sectra;*/
+            text-transform: uppercase;
+            transition-delay: .4s;
+            border-bottom: solid;
+            position: relative;
+            top: 120pt;
+            left: 420pt;
+            font-family: 'Vollkorn', serif;
+            color: white;
+        }
+        body {
+            background-color: #486d46; /* 背景色 */
+            background-image: url(https://nabla27.github.io/file/IMG/space2.jpg); /* 画像 */
+            background-size: cover; /* 全画面 */
+            background-attachment: fixed; /* 固定 */
+            background-position: center center; /* 縦横中央 */
+        }
+        .arrow {
+            position: relative; /*relative*/
+            display: inline-block; /*inline-block*/
+            padding: 0 0 0 16px; /*0 0 0 16px*/
+            color: #000; /*#000*/
+            vertical-align: middle; /*middle*/
+            text-decoration: none;
+            font-size: 15px; /*15*/
+        }
+
+        .arrow::before,
+        .arrow::after {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            margin: auto;
+            content: "";
+            vertical-align: middle;
+        }
+        .next::before {
+            left: 0px; /*3px -> 0px*/
+            width: 30px; /*4px -> 30px*/
+            height: 30px; /*4px -> 30px*/
+            border-top: 2px solid white; /*2px solid #7a0*/
+            border-right: 2px solid white; /*2px solid #7a0*/
+            -webkit-transform: rotate(45deg);
+            transform: rotate(45deg);
+        }
+        .prev::before {
+            left: -15px; /*3px -> -15px*/
+            width: 30px; /*4px -> 30px*/
+            height: 30px; /*4px -> 30px*/
+            border-top: 2px solid white; /*2px solid #7a0 -> 2px solid white*/
+            border-right: 2px solid white; /*2px solid #7a0 -> 2px solid white*/
+            -webkit-transform: rotate(225deg);
+            transform: rotate(225deg);
+        }
+        
+        
+    </style>
+</head>
+<body>
+    <div id="slider_wrap">
+        
+        <p id="slider_prev"><a href="#" class="arrow prev"></a></p>
+        <p id="slider_next"><a href="#" class="arrow next"></a></p>
+
+        <div id="slider">
+            <div id="slider_inner">
+                <ul class="panel">
+                    <li class="title" style="color: white; opacity: 1;">test1</li>
+                    <li>test2</li>
+                    <li>test3</li>
+                </ul>
+                
+                <ul class="panel">
+                    2ページ目
+                </ul>
+            </div><!-- end of #slider_inner -->
+        </div><!-- end of #slider -->
+    </div><!-- end of #slider_wrap -->
+</body>
+</html>

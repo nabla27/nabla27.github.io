@@ -1,0 +1,238 @@
+﻿<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+
+    <script>
+        jQuery(function ($) {
+            //表示領域の横幅（CSS の設定によってはパディングも含める必要がある）
+            var slider_width = $('#slider_wrap').width();
+            var slider_inner$ = $('#slider_inner');
+            //パネル全体を格納する div 要素の幅を設定
+            slider_inner$.css('width', slider_width * $('#slider_inner ul.panel').size() + 'px');
+            //最後のパネルを先頭位置に移動
+            $('#slider_inner ul.panel:last').prependTo('#slider_inner');
+            //移動した分だけ左方向へずらす（★）
+            slider_inner$.css('margin-left', '-' + slider_width + 'px');
+            //戻る」と「進む」ボタン
+            var prev_next$ = $('#slider_next, #slider_prev');
+
+            $('#slider_prev').click(function () {
+                prev_next$.hide();
+                slider_inner$.stop().animate({
+                    marginLeft: parseInt(slider_inner$.css('margin-left'), 10) + slider_width + 'px'
+                }, 700,
+                    function () {
+                        slider_inner$.css('margin-left', '-' + slider_width + 'px');
+                        $('#slider_inner ul.panel:last').prependTo('#slider_inner');
+                        prev_next$.show();
+                    });
+            });
+
+            $('#slider_next').click(function () {
+                prev_next$.hide();
+                slider_inner$.stop().animate({
+                    //「戻る」では加算したが「進む」では減算
+                    marginLeft: parseInt(slider_inner$.css('margin-left'), 10) - slider_width + 'px'
+                }, 700,
+                    //「戻る」では「prependTo」だが「進む」では「appendTo」
+                    function () {
+                        slider_inner$.css('margin-left', '-' + slider_width + 'px');
+                        $('#slider_inner ul.panel:first').appendTo('#slider_inner');
+                        prev_next$.show();
+                    });
+            });
+        });
+    </script>
+    <style>
+        .back {
+            image-orientation: 180deg;
+            background-attachment: fixed;
+            height: 100vh;
+            width: auto;
+            background-size: auto 100%;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+    </style>
+    <style type="text/css">
+        body {
+            background-color: #486d46; /* 背景色 */
+            background-image: url(https://nabla27.github.io/file/IMG/space2.jpg); /* 画像 */
+            background-size: cover; /* 全画面 */
+            background-attachment: fixed; /* 固定 */
+            background-position: center center; /* 縦横中央 */
+        }
+
+        #menu1 {
+            left: 23pt;
+            top: 10pt;
+        }
+
+        #menu2 {
+            left: 223pt;
+            top: 10pt;
+        }
+
+        #menu3 {
+            left: 423pt;
+            top: 10pt;
+        }
+
+        .menu_box {
+            /*
+            position: relative;
+            top: 200pt;
+            */
+            text-align: center; /* 中央表示 */
+            margin-left: auto; /* 中央表示 */
+            margin-right: auto; /* 中央表示 */
+            text-align: left; /* 中央表示 */
+            width: 600pt; /* 幅 */
+            height: 400pt; /* 高さ */
+            top: 100pt; /* ページに対する位置 */
+            border: solid; /* 枠線の種類 */
+            position: relative; /* 子要素を相対的に設定するために */
+            overflow: scroll; /* スクロール機能を追加 */
+            overflow: hidden; /* スクロールバーの非表示 */
+        }
+
+        .menu {
+            position: absolute; /* 親要素.menu_boxを基準に位置を決める */
+            border: solid; /* 枠線の種類 */
+            border-color: black; /* 枠線の色 */
+            color: white; /* 文字色 */
+            width: 150pt; /* 各メニューのボックス幅 */
+            height: 200pt; /* 各メニューのボックスの高さ */
+        }
+
+        #title {
+            border-bottom-style: solid;
+            text-align: center; /* 中央表示 */
+            margin-left: auto; /* 中央表示 */
+            margin-right: auto; /* 中央表示 */
+            text-align: left; /* 中央表示 */
+        }
+
+        .title {
+            font-size: 50pt;
+            text-align: center;
+            transition: all .6s ease-in-out;
+            /*font-family: Sectra;*/
+            text-transform: uppercase;
+            transition-delay: .4s;
+            border-bottom: solid;
+            position: relative;
+            top: 120pt;
+            font-family: 'Vollkorn', serif;
+        }
+
+        .serection_text {
+            text-align: center;
+            transition: all .6s ease-in-out;
+            font-family: Sectra;
+            text-transform: uppercase;
+            transition-delay: .4s;
+            border-bottom: solid;
+            border-color: coral;
+            position: relative;
+            margin: 10pt;
+            color: white;
+        }
+
+        .serection {
+            text-align: center;
+            transition: all .6s ease-in-out;
+            font-family: Sectra;
+            text-transform: uppercase;
+            transition-delay: .4s;
+            position: relative;
+            top: 130pt;
+        }
+    </style>
+    <style>
+        * { /* 好ましくないが取りあえずマージンとパディングをリセット */
+            margin: 0;
+            padding: 0;
+        }
+
+        #slider_wrap {
+            margin: 20px auto;
+            width: 680px; /* 全体の幅 */
+            height: 125px; /* パネルの高さ + パディング */
+            padding: 20px;
+            position: relative; /* 基点とするため相対配置に */
+            border: 1px solid #CCC;
+        }
+
+        #slider_prev {
+            position: absolute; /* 絶対配置 */
+            top: 65px;
+            left: 10px;
+            cursor: pointer;
+        }
+
+        #slider_next {
+            position: absolute; /* 絶対配置 */
+            top: 65px;
+            right: 10px;
+            cursor: pointer;
+        }
+
+        #slider {
+            width: 100%;
+            height: 100%;
+            overflow: hidden; /* はみ出た部分を非表示に */
+        }
+
+        #slider_inner ul.panel {
+            width: 640px;
+            height: 85px;
+            padding: 20px; /* パネルの幅＋パディング = 680px */
+            list-style-type: none;
+            float: left;
+        }
+
+            #slider_inner ul.panel li {
+                float: left;
+                margin: 0 5px;
+                display: inline; /* li をフロートさせるとIE6 ではずれるのでこの指定で回避 */
+            }
+
+            #slider_inner ul.panel img {
+                border: none;
+            }
+    </style>
+</head>
+<body>
+    <!--
+    <div class="title" style="color: white; opacity: 1;">Programming</div>
+    <div class="serection">
+        <span class="serection_text">Python</span>
+        <span class="serection_text">JavaScript</span>
+        <span class="serection_text">C++</span>
+        <span class="serection_text">html</span>
+        <span class="serection_text">CSS</span>
+    </div>
+    -->
+
+    <div id="slider_wrap">
+        <p id="slider_prev">戻る</p>
+        <p id="slider_next">進む</p>
+        <div id="slider">
+            <div id="slider_inner">
+                <ul class="panel">
+                    1ページ目
+                </ul>
+
+                <ul class="panel">
+                    2ページ目
+                </ul>
+            </div><!-- end of #slider_inner -->
+        </div><!-- end of #slider -->
+    </div><!-- end of #slider_wrap -->
+</body>
+</html>
