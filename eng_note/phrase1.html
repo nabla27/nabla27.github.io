@@ -15,6 +15,7 @@
             width: 800pt;
             height: 500pt;
             background-color: paleturquoise;
+            resize: horizontal;
         }
         .help{
             height:14pt;
@@ -24,7 +25,7 @@
         
     </style>
     <script language="JavaScript">
-        var max = 16; //------------------------------------------------->要素数
+        var max = 25; //------------------------------------------------->要素数
         var mode = new Array(max);
         for (var i = 1; i <= max; i++) {
             mode[i] = "ja";
@@ -35,36 +36,101 @@
         //---------------------------------------------------------------------------------------------------------------------
         eng[1] = " The purpose of this study is to examine the impact of restructuring on company administrations.";
         ja[1] = " この研究の目的は、リストラが会社運営に及ぼす影響を検討することである。";
+        word[1] = " examine:調査する \n restructuring:再構築/リストラ \n administration:管理/経営者"
+
         eng[2] = " This paper is intended as an investigation of the water pollution in the Meguro River.";
         ja[2] = " この論文のねらいは、目黒川の水質汚染の調査研究にある。";
+        word[2] = " intend:意図する"
+
         eng[3] = " This paper discusses the issues related to the financial reforms proposed by the goverment."
         ja[3] = " この論文は、政府が提唱した金融改革に関する問題について議論するものである。"
+        word[3] = " financial:財政の/金融の"
+
         eng[4] = " In this article, I would like to explore a little further the ideal school admissions prosess, including the issues of equity and transparency."
         ja[4] = " この論文では、理想的な入学のプロセスについて、公正さと透明さの課題を含めてさらに探求したい。"
+        word[4] = " explore:探求する/調査する \n admission:入学/自認 \n equity:公平 \n transparency:透明/透明性"
+
         eng[5] = " We are here concerned with the key aspects of the economic reforms currently needed."
-        ja[5] = " ここでは、現在必要とされている経済改革の鍵よなる側面に関心がある。"
-        eng[6] = " This is a comprative study of the Japanese and European educational systems."
+        ja[5] = " ここでは、現在必要とされている経済改革の鍵となる側面に関心がある。"
+        word[5] = " concern:関係している/重要である/心配させる"
+
+        eng[6] = " This is a comparative study of the Japanese and European educational systems."
         ja[6] = " これは、日本とヨーロッパの教育制度に関する比較研究である。"
+        word[6] = " comparative:比較の/かなりの"
+
         eng[7] = " The first chapter describes the major international contributions which his foundation made."
         ja[7] = " 第一章では彼の財団が行った主な国際的貢献を記す。"
+        word[7] = " foundation:創設/財団/維持基金/根拠"
+
         eng[8] = " The second chapter presents the unique biological characteristics of the substance."
         ja[8] = " 第二章ではその物質特有の生物学上の特徴を提示する。"
-        eng[9] = " In this article, we are not cencerned with the effectiveness of the heliport paln itself."
+
+        eng[9] = " In this article, we are not cencerned with the effectiveness of the heliport plan itself."
         ja[9] = " この論文では、ヘリポート建設計画そのものの効果については取り扱わない。"
+        word[9] = " effectiveness:有効性/効力"
+
         eng[10] = " It is interesting to follow up this point further, but this is not our present concern."
         ja[10] = " このポイントをさらに追及することは興味深いが、それは現在の私たちの関心ごとではない。"
-        eng[11] = " I limit the discussion to the effect of the plan on the Mayoral election."
+        word[10] = "present:現在の/出席して \n concern:関係している/重要である/心配させる"
+
+        eng[11] = " I limit the discussion to the effect of the plan on the mayoral election."
         ja[11] = " 議論をその計画が市長選挙に与える影響に限定する。"
+        word[11] = " mayoral:市長の \n election:選挙/当選"
+
         eng[12] = " As space is limited, I will concentrate on the effect of sleep disturbance on memory."
         ja[12] = " 紙面に限りがあるので、問題の焦点を睡眠妨害が記憶力に及ぼす影響に絞ることにする。"
+        word[12] = " concentrate:集中する/濃縮する \n disturbance:騒ぎ/妨害/障害"
+
         eng[13] = " As the purpose of this paper is concerned, it is not necessary to discuss the secondary effect that has accompanied the primary one in detail."
         ja[13] = " この論文の目的からして、一次的影響に付随して起きた二次的影響について詳しく議論することは必要ではない。"
+        word[13] = " concern:関係している/重要である/心配させる \n accompany:同行する/添える/伴奏する"
+
         eng[14] = " The combined effects of stressful exercise and sleep disturbance on human health are too complicated to be examined in detail here."
         ja[14] = " ストレスのたまる運動と睡眠妨害の組み合わせが人間の健康に及ぼす影響はとても複雑なのでここで詳しく検証することはできない。"
+        word[14] = " disturbance:騒ぎ/妨害/障害 \n complicated:複雑な/分かりにくい"
+
         eng[15] = " I will concentrate on the following issues: investment and finance."
         ja[15] = " 次の事柄、すなわち投資と財政に的を絞る。"
+        word[15] = " concentrate:集中する/濃縮する \n investment:投資 \n finance:財政/財力/歳入"
+
         eng[16] = " I will not take up this matter in detail."
         ja[16] = " この問題を詳細には取り上げない。"
+
+        eng[17] = " The collaspe of the coalition goverment has provoked a great deal of controversy."
+        ja[17] = " 連立政権の崩壊は多くの議論を引き起こした。"
+        word[17] = " collapse:崩壊する/失敗する/衰える \n coalition:連合/提携/連立 \n provoke:怒らせる/引き起こす \n controversy:論争"
+
+        eng[18] = " The social concern with criminal acts by youth has been growing for the last several years."
+        ja[18] = " ここ数年の間、青少年による犯罪行為について社会的関心が高まってきている。"
+        word[18] = "concern:関係している/重要である/心配させる"
+
+        eng[19] = " Drug dealings through the Internet have been brought to public attention by several murder cases."
+        ja[19] = " インターネットを通じての薬物売買が数件の殺人事件によって世間の注目を浴びるようになった。"
+        word[19] = " dealing:交友関係/売買/仕打ち \n murder:殺人 \n case:事例/事件/真相/立場"
+
+        eng[20] = " There has been a renewal of interest in gardening, especially among the young people in recent years."
+        ja[20] = " 園芸に対する興味が近年、特に若い人の間で新たに出てきた。"
+
+        eng[21] = " It has been proposed that the degree to which one gets nervous in a certain situation is largely affected by personality differences."
+        ja[21] = " ある状況下で個人の感じる緊張度は性格の個人差に大きく影響されるということが提唱されてきた。"
+        word[21] = " certain:確かな/一定の \n affect:影響を及ぼす/感動させる"
+
+        eng[22] = " Over the past few decades, a considerable number of studies have been conducted on the effects of media violence on physiological reactions of the viewers."
+        ja[22] = " ここ20～30年の間に暴力映像が視聴者の生理的反応に及ぼす影響に関するかなりの研究が行われてきた。"
+        word[22] = " considerable:かなりの/重要な \n conduct:行為/運営/管理 \n physiological:生理学の"
+
+        eng[23] = " Over the past few years, several studies have been made on soil contamination by dioxin."
+        ja[23] = " 過去数年にわたり、ダイオキシンによる土壌汚染についていくつかの研究がなされてきた。"
+        word[23] = " soil:土壌/農地/土地 \n contamination:汚染"
+
+        eng[24] = " It has been recognized by archaeologists that architecture reflects cultural beliefs and practices."
+        ja[24] = " 建造物はその文化に根ざした信念や習慣を反映するということが考古学者たちによって認識されてきた。"
+        word[24] = " archaeologist:考古学者 \n architecture:建築学/建物/構造 \n reflect:反射する/映す/反映する/招く \n practice:実行/経験/練習/習慣"
+
+        eng[25] = " Some of the most compelling studies have focused on the roots of bonsai in Chinese landscape gardening."
+        ja[25] = " 最も説得力のある研究は、中国の庭園造りにおける盆栽の由来に焦点をあててきた。"
+        word[25] = " compelling:強制的な/人を動かさずにはおかない"
+
         //---------------------------------------------------------------------------------------------------------------------
         var sup = max;
         function setup(){
@@ -118,6 +184,17 @@
         <input class="bt" type="radio" onclick="reverse(14)"><b class="text" id="14"></b><input class="help" type="button" value="help" onclick="Help(14)" /><br />
         <input class="bt" type="radio" onclick="reverse(15)"><b class="text" id="15"></b><input class="help" type="button" value="help" onclick="Help(15)" /><br />
         <input class="bt" type="radio" onclick="reverse(16)"><b class="text" id="16"></b><input class="help" type="button" value="help" onclick="Help(16)" /><br />
+        <br />
+        <input class="bt" type="radio" onclick="reverse(17)"><b class="text" id="17"></b><input class="help" type="button" value="help" onclick="Help(17)" /><br />
+        <input class="bt" type="radio" onclick="reverse(18)"><b class="text" id="18"></b><input class="help" type="button" value="help" onclick="Help(18)" /><br />
+        <input class="bt" type="radio" onclick="reverse(19)"><b class="text" id="19"></b><input class="help" type="button" value="help" onclick="Help(19)" /><br />
+        <input class="bt" type="radio" onclick="reverse(20)"><b class="text" id="20"></b><input class="help" type="button" value="help" onclick="Help(20)" /><br />
+        <input class="bt" type="radio" onclick="reverse(21)"><b class="text" id="21"></b><input class="help" type="button" value="help" onclick="Help(21)" /><br />
+        <input class="bt" type="radio" onclick="reverse(22)"><b class="text" id="22"></b><input class="help" type="button" value="help" onclick="Help(22)" /><br />
+        <br />
+        <input class="bt" type="radio" onclick="reverse(23)"><b class="text" id="23"></b><input class="help" type="button" value="help" onclick="Help(23)" /><br />
+        <input class="bt" type="radio" onclick="reverse(24)"><b class="text" id="24"></b><input class="help" type="button" value="help" onclick="Help(24)" /><br />
+        <input class="bt" type="radio" onclick="reverse(25)"><b class="text" id="25"></b><input class="help" type="button" value="help" onclick="Help(25)" /><br />
     </div>
 </body>
 
