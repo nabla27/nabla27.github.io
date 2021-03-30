@@ -1,8 +1,10 @@
 {
   "ExpandedNodes": [
     "",
+    "\\file",
+    "\\file\\ICON",
     "\\file\\IMG"
   ],
-  "SelectedNode": "\\test2.html",
+  "SelectedNode": "\\file\\ICON\\down_arrow.png",
   "PreviewInSolutionExplorer": false
 }
