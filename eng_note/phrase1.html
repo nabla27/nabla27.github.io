@@ -16,6 +16,8 @@
             height: 500pt;
             background-color: paleturquoise;
             resize: horizontal;
+            resize: both;
+            overflow: scroll;
         }
         .help{
             height:14pt;
@@ -25,7 +27,7 @@
         
     </style>
     <script language="JavaScript">
-        var max = 25; //------------------------------------------------->要素数
+        var max = 35; //------------------------------------------------->要素数
         var mode = new Array(max);
         for (var i = 1; i <= max; i++) {
             mode[i] = "ja";
@@ -131,6 +133,44 @@
         ja[25] = " 最も説得力のある研究は、中国の庭園造りにおける盆栽の由来に焦点をあててきた。"
         word[25] = " compelling:強制的な/人を動かさずにはおかない"
 
+        eng[26] = " Photogermination of rung liverwort has never been studied so far."
+        ja[26] = " ゼニゴケの光発芽についてはこれまで全く研究されなかった。"
+        word[26] = " germination:発芽/発生 \n livewort:コケ植物"
+
+        eng[27] = " There has been no study that tried to prove this hypothesis."
+        ja[27] = " この仮説の立証を試みた研究は今までなかった。"
+
+        eng[28] = " Little is known about the brain mechanisms and language comprehension."
+        ja[28] = " 脳内のメカニズムと言語理解についてはほとんどわかっていない。"
+        word[28] = " comprehension:会得/理解力/包容力"
+
+        eng[29] = " Little attention has been given to the declination of the Thai sugar industry due to the rise of labor wages."
+        ja[29] = " 労働賃金の上昇によるタイのさとうきび産業の衰退にはほとんど注意がむけられてこなかった。"
+        word[29] = " declination:下降/傾斜/辞退/偏差 \n sugar:砂糖/おまえ/おせじ \n labor:労働/労働者 \n wage:賃金/報い"
+
+        eng[30] = " It had been reported that dietary fiber helped prevent adult diseases, but the mechanism responsible for this phenomenon was unknown."
+        ja[30] = " 食物繊維が成人病の予防を助けることが報告されていたが、この現象のメカニズムはわかっていなかった。"
+        word[30] = " dietary:飲食の/ダイエットの \n fiber:繊維/素質/性格 \n dietary fiber:食物繊維 \n responsible:責任のある/信頼できる"
+
+        eng[31] = " Although studies have been made on the cause of thunderbolts, there is little agreement on how electric power is generated in thunderbolts."
+        ja[31] = " 落雷の原因についての研究は行われてきたが、どのように発電するのかについての意見はほとんど一致していない。"
+        word[31] = " thunderbolt:落雷/思いがけない事柄 \n generate:引き起こす/招く"
+
+        eng[32] = " It is said that ethnic minorities tend to have an advantage in making profit in business. However, there seems to be no established theory to explain this tendency."
+        ja[32] = " 少数民族は商売で儲けることにおいて卓越している傾向があると言われているが、この傾向を説明する定説はないように思われる。"
+        word[32] = " ethnic:民族の \n minority:少数/未成年 \n profit:利益/得 \n tendency:傾向/意図"
+
+        eng[33] = " What seems to be lacking is a consideration of the economic background rather than the political one."
+        ja[33] = " 欠けていると思われることは、政治的背景より経済的背景を考慮することである。"
+        word[33] = " consideration:考慮/動機/思いやり \n political:政治の/政治的な"
+
+        eng[34] = " Altough numerous attempts have been made to study the flowering hormone, florigen, the existence of florigen itself is still controversial."
+        ja[34] = " 花成ホルモンであるフロリゲンの研究について数多くの試みがなされてきたが、フロリゲンの存在自体については依然結論を得ていない。"
+        word[34] = " attempt:試みる \n flowering hormone:花成ホルモン \n controversial:論争の/物議をかもす"
+
+        eng[35] = " Fundamental questions remain unanswered."
+        ja[35] = " 根本的な疑問は解決されないまま残っている。"
+
         //---------------------------------------------------------------------------------------------------------------------
         var sup = max;
         function setup(){
@@ -195,6 +235,17 @@
         <input class="bt" type="radio" onclick="reverse(23)"><b class="text" id="23"></b><input class="help" type="button" value="help" onclick="Help(23)" /><br />
         <input class="bt" type="radio" onclick="reverse(24)"><b class="text" id="24"></b><input class="help" type="button" value="help" onclick="Help(24)" /><br />
         <input class="bt" type="radio" onclick="reverse(25)"><b class="text" id="25"></b><input class="help" type="button" value="help" onclick="Help(25)" /><br />
+        <br />
+        <input class="bt" type="radio" onclick="reverse(26)"><b class="text" id="26"></b><input class="help" type="button" value="help" onclick="Help(26)" /><br />
+        <input class="bt" type="radio" onclick="reverse(27)"><b class="text" id="27"></b><input class="help" type="button" value="help" onclick="Help(27)" /><br />
+        <input class="bt" type="radio" onclick="reverse(28)"><b class="text" id="28"></b><input class="help" type="button" value="help" onclick="Help(28)" /><br />
+        <input class="bt" type="radio" onclick="reverse(29)"><b class="text" id="29"></b><input class="help" type="button" value="help" onclick="Help(29)" /><br />
+        <input class="bt" type="radio" onclick="reverse(30)"><b class="text" id="30"></b><input class="help" type="button" value="help" onclick="Help(30)" /><br />
+        <input class="bt" type="radio" onclick="reverse(31)"><b class="text" id="31"></b><input class="help" type="button" value="help" onclick="Help(31)" /><br />
+        <input class="bt" type="radio" onclick="reverse(32)"><b class="text" id="32"></b><input class="help" type="button" value="help" onclick="Help(32)" /><br />
+        <input class="bt" type="radio" onclick="reverse(33)"><b class="text" id="33"></b><input class="help" type="button" value="help" onclick="Help(33)" /><br />
+        <input class="bt" type="radio" onclick="reverse(34)"><b class="text" id="34"></b><input class="help" type="button" value="help" onclick="Help(34)" /><br />
+        <input class="bt" type="radio" onclick="reverse(35)"><b class="text" id="35"></b><input class="help" type="button" value="help" onclick="Help(35)" /><br />
     </div>
 </body>
 
