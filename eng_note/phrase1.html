@@ -13,7 +13,7 @@
             line-height: 10pt;
             border: solid;
             width: 800pt;
-            height: 500pt;
+            height: 400pt;
             background-color: paleturquoise;
             resize: horizontal;
             resize: both;
@@ -27,6 +27,7 @@
         
     </style>
     <script language="JavaScript">
+        var chapter;
         var max = 35; //------------------------------------------------->要素数
         var mode = new Array(max);
         for (var i = 1; i <= max; i++) {
@@ -36,10 +37,11 @@
         var ja = new Array(max);
         var word = new Array(max);
         //---------------------------------------------------------------------------------------------------------------------
+     
         eng[1] = " The purpose of this study is to examine the impact of restructuring on company administrations.";
         ja[1] = " この研究の目的は、リストラが会社運営に及ぼす影響を検討することである。";
         word[1] = " examine:調査する \n restructuring:再構築/リストラ \n administration:管理/経営者"
-
+        
         eng[2] = " This paper is intended as an investigation of the water pollution in the Meguro River.";
         ja[2] = " この論文のねらいは、目黒川の水質汚染の調査研究にある。";
         word[2] = " intend:意図する"
@@ -173,7 +175,7 @@
 
         //---------------------------------------------------------------------------------------------------------------------
         var sup = max;
-        function setup(){
+        function setup_e() {
             for (var j = 1; j <= sup; j++) {
                 if (mode[j] == "ja") {
                     reverse(j);
@@ -181,6 +183,19 @@
                 }
             }
         }
+        function setup_j() {
+            for (var j = 1; j <= sup; j++) {
+                if (mode[j] == "en") {
+                    reverse(j);
+                    mode[j] = "ja";
+                }
+                else {
+                    reverse(j);
+                    mode[j] = "ja";
+                }
+            }
+        }
+
     </script>
     <script>
         function reverse(num) {
@@ -204,9 +219,9 @@
     <b id="1" onclick = "reverse('1')">こんにちは</b><br />
     <b id="2" onclick = "reverse('2')">こんにちは</b><br />
     -->
-    <input id="setup" type="button" value="start" onclick="setup()" /><br />
+    <input id="setup_e" type="button" value="english" onclick="setup_e()" /><input id="setup_j" type="button" value="japanese" onclick="setup_j()" /><br />
 
-    <div style="position:absolute; left:50pt; top:100pt;" id="text1">
+    <div style="position:absolute; left:20pt; top:30pt;" id="text1">
         <input class="bt" type="radio" onclick="reverse(1)"><b class="text" id="1"></b><input class="help" type="button" value="help" onclick="Help(1)" /><br />
         <input class="bt" type="radio" onclick="reverse(2)"><b class="text" id="2"></b><input class="help" type="button" value="help" onclick="Help(2)" /><br />
         <input class="bt" type="radio" onclick="reverse(3)"><b class="text" id="3"></b><input class="help" type="button" value="help" onclick="Help(3)" /><br />
