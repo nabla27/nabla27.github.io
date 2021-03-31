@@ -112,6 +112,7 @@
             font-family: 'Caveat', cursive;
             font-size: 30pt;
             color: white;
+            cursor: pointer;
         }
         .menu_selection{
             position: relative;
@@ -126,15 +127,58 @@
             color: white;
         }
 
+
+        .openbox input {
+            display: none; /* チェックボックスを隠す */
+        }
+
+        .openbox .boxshow {
+            height: 0;
+            opacity: 0; /* 折り畳んだ時に中を透明にする */
+            display: none; /* 閉じた時に中身の要素をなくす */
+        }
+
+        .inputcss:checked + .boxshow {
+            height: auto;
+            opacity: 1; /*クリックやタップで中を表示させる*/
+            display: block; /* 折り畳みになるように */
+        }
+
+        .openbox label {
+            /*background: #babbbb;*/
+            padding: 5px 10px;
+        }
+
+        #bar_select {
+            list-style: none;
+            margin-left: 0;
+            padding-left: 0;
+        }
+
+        
     </style>
 </head>
 <body>
     
     <div id="header">
-        <span id="cite_name">nabla's</span>
+        <!--<span id="cite_name2">nabla's</span>-->
         <span><a class="menu_selection" href="#Programming">PROGRAMMING</a></span><span class="menu_selection"> |</span>
         <span><a class="menu_selection" href="#mathematics_physics">MATHEMATICS / PHYSICS</a></span><span class="menu_selection"> |</span>
         <span><a class="menu_selection" href="#English_note">ENGLISH NOTE</a></span><span class="menu_selection"> |</span>
+
+        <!-- 折り畳み展開 -->
+        <div class="openbox">
+            <label for="pushlabel"><span id="cite_name">nabla's</span></label>
+            <input id="pushlabel" class="inputcss" type="checkbox" />
+            <span class="boxshow">
+                <!--折り畳まれる部分-->
+                <ul id="bar_select">
+                    <li>**ここは折りたたまれる部分です**</li>
+                    <li><a href="URL">折りたたまれる部分にリンク付けたい場合</a></li>
+                </ul>
+            </span>
+        </div>
+
     </div>
 
 
