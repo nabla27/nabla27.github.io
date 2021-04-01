@@ -1,0 +1,100 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+        .text {
+            font-size: 10pt;
+            /*vertical-align: middle;*/
+        }
+
+        #text1 {
+            line-height: 10pt;
+            border: solid;
+            width: 800pt;
+            height: 400pt;
+            background-color: paleturquoise;
+            resize: horizontal;
+            resize: both;
+            overflow: scroll;
+        }
+
+        .help {
+            height: 14pt;
+            position: absolute;
+            right: 0pt;
+        }
+    </style>
+    <script language="JavaScript">
+        var chapter;
+        var max = 35; //------------------------------------------------->要素数
+        var mode = new Array(max);
+        for (var i = 1; i <= max; i++) {
+            mode[i] = "ja";
+        }
+        var eng = new Array(max);
+        var ja = new Array(max);
+        var word = new Array(max);
+        //---------------------------------------------------------------------------------------------------------------------
+       
+
+
+        //---------------------------------------------------------------------------------------------------------------------
+        var sup = max;
+        function setup_e() {
+            for (var j = 1; j <= sup; j++) {
+                if (mode[j] == "ja") {
+                    reverse(j);
+                    mode[j] = "eng";
+                }
+            }
+        }
+        function setup_j() {
+            for (var j = 1; j <= sup; j++) {
+                if (mode[j] == "en") {
+                    reverse(j);
+                    mode[j] = "ja";
+                }
+                else {
+                    reverse(j);
+                    mode[j] = "ja";
+                }
+            }
+        }
+
+    </script>
+    <script>
+        function reverse(num) {
+            var elem = document.getElementById(num);
+            if (mode[num] == "ja") {
+                elem.innerHTML = eng[num]
+                mode[num] = "eng"
+            }
+            else if(mode[num] == "eng"){
+                elem.innerHTML = ja[num];
+                mode[num] = "ja"
+            }
+        }
+        function Help(num) {
+            alert(word[num]);
+        }
+    </script>
+</head>
+<body>
+    <!--
+    <b id="1" onclick = "reverse('1')">こんにちは</b><br />
+    <b id="2" onclick = "reverse('2')">こんにちは</b><br />
+    -->
+    Phrase1
+    <input id="setup_e" type="button" value="english" onclick="setup_e()" /><input id="setup_j" type="button" value="japanese" onclick="setup_j()" />
+    <a href="https://nabla27.github.io/eng_note/article2.html"><input id="next_page" type="button" value="NEXT" /></a><br />
+
+    <div style="position:absolute; left:5pt; top:30pt;" id="text1">
+        <input class="bt" type="radio" onclick="reverse(1)"><b class="text" id="1"></b><input class="help" type="button" value="help" onclick="Help(1)" /><br />
+        
+    </div>
+</body>
+
+</html>
